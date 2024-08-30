@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import trainee from "../../Assets/Projects/training-app.png";
+import swigit from "../../Assets/Projects/swigit.png";
+import passport from "../../Assets/Projects/passport.png";
+import crypto from "../../Assets/Projects/crypto-currency.png";
+import employee from "../../Assets/Projects/employee-directory.png";
+import CarPool from "../../Assets/Projects/carpool.png";
 
 function Projects() {
   return (
@@ -23,54 +23,54 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={crypto}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Crypto Hunter"
+              description="Real-Time Cryptocurrency Tracker Built with React.js, CoinGecko API, and Styled Components, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
+              ghLink="https://github.com/sammittal1608/Crypto-hunter"
+              demoLink="https://crypto-hunter.netlify.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={CarPool}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
+              title="Carpool"
+              description="A Ride-Sharing and Commuting Management Platform Built with Angular and .NETA Comprehensive Ride-Sharing and Commuting Management Web Application for Booking and Offering Rides, Built with Angular and .NET ."
+              ghLink="https://github.com/sammittal1608/CarPool-Angular"
               demoLink="https://blogs.soumya-jit.tech/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={passport}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
+              title="Passport Scanner System"
+              description="Real-Time Document Scanning and Verification Interface for Hotels and Hospitality Services, Built with React.js and .NET ."
+              ghLink="https://github.com/sammittal1608/passport-scanner-app"
               demoLink="https://editor.soumya-jit.tech/"              
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={trainee}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Training Tracker"
+              description="Developed a comprehensive training management system using Blazor (frontend) and .NET Web API (backend) for tracking intern progress, with Identity Server integration for secure authentication and authorization."
+              ghLink="https://github.com/sammittal1608/training-app"
+              // demoLink="https://plant49-ai.herokuapp.com/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={employee}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
+              title="Employee Directory"
+              description="Developed an Angular-based employee directory website with .NET Core Web API backend. Facilitated employee access to details and implemented filtering by department, office, and job tle for enhanced user experience."
               ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
@@ -78,12 +78,11 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={swigit}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
+              title="Swagit"
+              description="Developed a clone of an online food ordering platform, Swagit, using only HTML and CSS. The platform allows users to explore and order from a variety of restaurants."
+              ghLink="https://github.com/sammittal1608/Swiggy-Clone"
               // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
             />
           </Col>
