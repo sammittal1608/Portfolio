@@ -39,7 +39,7 @@ function Projects() {
               title="Carpool"
               description="A Ride-Sharing and Commuting Management Platform Built with Angular and .NETA Comprehensive Ride-Sharing and Commuting Management Web Application for Booking and Offering Rides, Built with Angular and .NET ."
               ghLink="https://github.com/sammittal1608/CarPool-Angular"
-              demoLink="https://blogs.soumya-jit.tech/"
+              // demoLink="https://blogs.soumya-jit.tech/"
             />
           </Col>
 
@@ -50,7 +50,7 @@ function Projects() {
               title="Passport Scanner System"
               description="Real-Time Document Scanning and Verification Interface for Hotels and Hospitality Services, Built with React.js and .NET ."
               ghLink="https://github.com/sammittal1608/passport-scanner-app"
-              demoLink="https://editor.soumya-jit.tech/"              
+              // demoLink="https://editor.soumya-jit.tech/"              
             />
           </Col>
 
@@ -71,7 +71,7 @@ function Projects() {
               isBlog={false}
               title="Employee Directory"
               description="Developed an Angular-based employee directory website with .NET Core Web API backend. Facilitated employee access to details and implemented filtering by department, office, and job tle for enhanced user experience."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
+              ghLink="https://github.com/sammittal1608/Angular_EmployeeDirectory"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
           </Col>
@@ -81,7 +81,7 @@ function Projects() {
               imgPath={swigit}
               isBlog={false}
               title="Swagit"
-              description="Developed a clone of an online food ordering platform, Swagit, using only HTML and CSS. The platform allows users to explore and order from a variety of restaurants."
+              description="Developed an online food ordering platform, Swagit, using only HTML and CSS. The platform allows users to explore and order from a variety of restaurants."
               ghLink="https://github.com/sammittal1608/Swiggy-Clone"
               // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
             />
