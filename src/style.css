@@ -551,9 +551,9 @@ button:focus {
 }
 
 .tech-icons {
-  font-size: 4.5em !important;
+  font-size: 3.5em !important;
   margin: 15px !important;
-  padding: 10px !important;
+  padding: 7px !important;
   opacity: 0.93 !important;
   border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
   vertical-align: middle !important;
@@ -564,12 +564,29 @@ button:focus {
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
+.tech-icons p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #cfcfcf;
+}
+.tech-icons svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.tech-icons svg:hover {
+  transform: scale(1.2);
+  color: #00aaff;
+}
 
 @media (max-width: 767px) {
   .tech-icons {
     margin: 10px !important;
   }
+  .tech-icons p {
+    font-size: 1rem;
+  }
 }
+
 
 .tech-icons:hover {
   transform: scale(1.05) !important;

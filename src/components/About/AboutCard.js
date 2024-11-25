@@ -13,8 +13,7 @@ function AboutCard() {
             <br />
             I am currently employed as a software developer at Tezo.
             <br />
-            I have completed Bachelor of Technology (B.Tech) in Computer Science and Engineering at S.D. College of Engineering and Technology
-            , Mzn.
+            I have completed Bachelor of Technology (B.Tech) in Computer Science and Engineering at Dr. A. P. J. Abdul Kalam Technical University, Mzn.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
