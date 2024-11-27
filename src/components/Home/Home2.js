@@ -2,17 +2,14 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import { gtag } from "../../Utility/analytics";
-import {
-  AiFillGithub
-} from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
-  // Function to track social media link clicks
   const trackSocialClick = (platform) => {
-    if (typeof gtag === "function") {
-      gtag("event", "social_click", {
+    if (typeof window.gtag === "function") {
+      console.log(`${platform} click tracked`);
+      window.gtag("event", "social_click", {
         event_category: "social",
         event_label: platform,
       });
@@ -41,17 +38,26 @@ function Home2() {
               <i>
                 <b className="purple">Web Technologies and Products </b> and
                 also in areas related to{" "}
-                <b className="purple">
-                  Artificial Intelligence.
-                </b>
+                <b className="purple">Artificial Intelligence.</b>
               </i>
               <br />
               <br />
               Whenever possible, I apply my passion for developing products with
               <b className="purple"> C# .NET, Node.js</b> and
-              <i><b className="purple"> Modern JavaScript Libraries and Frameworks</b></i>,
-              such as <i><b className="purple">React.js</b></i> and <i><b className="purple"> Angular</b></i>.
-
+              <i>
+                <b className="purple">
+                  Modern JavaScript Libraries and Frameworks
+                </b>
+              </i>
+              , such as{" "}
+              <i>
+                <b className="purple">React.js</b>
+              </i>{" "}
+              and{" "}
+              <i>
+                <b className="purple">Angular</b>
+              </i>
+              .
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -72,8 +78,8 @@ function Home2() {
                   href="https://github.com/sammittal1608"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  onClick={() => trackSocialClick("GitHub")} // Track GitHub click
+                  className="icon-colour home-social-icons"
+                  onClick={() => trackSocialClick("GitHub")}
                 >
                   <AiFillGithub />
                 </a>
@@ -83,8 +89,8 @@ function Home2() {
                   href="https://www.linkedin.com/in/saiyam-mittal-2757a91a4/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                  onClick={() => trackSocialClick("LinkedIn")} // Track LinkedIn click
+                  className="icon-colour home-social-icons"
+                  onClick={() => trackSocialClick("LinkedIn")}
                 >
                   <FaLinkedinIn />
                 </a>

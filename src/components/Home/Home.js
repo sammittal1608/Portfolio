@@ -4,38 +4,18 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { gtag } from "../../Utility/analytics";
 
 function Home() {
-  // Track when the Home section loads
   useEffect(() => {
-    if (typeof gtag === "function") {
-      gtag("event", "home_visit", {
+    // Track when the Home section is visited
+    if (typeof window.gtag === "function") {
+      console.log("Home section visit tracked");
+      window.gtag("event", "home_visit", {
         event_category: "navigation",
         event_label: "Home Section",
       });
     }
   }, []);
-
-  // Track interactions with the greeting text
-  const trackGreetingClick = () => {
-    if (typeof gtag === "function") {
-      gtag("event", "greeting_click", {
-        event_category: "interaction",
-        event_label: "Hi There Greeting",
-      });
-    }
-  };
-
-  // Track interactions with the home image
-  const trackImageClick = () => {
-    if (typeof gtag === "function") {
-      gtag("event", "home_image_click", {
-        event_category: "interaction",
-        event_label: "Home Image",
-      });
-    }
-  };
 
   return (
     <section>
@@ -44,34 +24,26 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1
-                style={{ paddingBottom: 15 }}
-                className="heading"
-                onClick={trackGreetingClick} // Track greeting click
-              >
+              <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
-
               <h1 className="heading-name">
                 I'M
                 <strong className="main-name"> SAIYAM MITTAL</strong>
               </h1>
-
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
-
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
-                onClick={trackImageClick} // Track image click
               />
             </Col>
           </Row>
