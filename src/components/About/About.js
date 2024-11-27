@@ -5,6 +5,7 @@ import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
+import { gtag } from "../../Utility/analytics";
 
 function About() {
   // Function to track About Section interactions

@@ -8,7 +8,7 @@ import passport from "../../Assets/Projects/passport.png";
 import crypto from "../../Assets/Projects/crypto-currency.png";
 import employee from "../../Assets/Projects/employee-directory.png";
 import CarPool from "../../Assets/Projects/carpool.png";
-
+import { gtag } from "../../Utility/analytics";
 function Projects() {
   // Function to track project card clicks
   const trackProjectClick = (projectName) => {
