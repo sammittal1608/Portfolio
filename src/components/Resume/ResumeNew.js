@@ -11,9 +11,20 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
 
+  // Handle window resizing
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
+
+  // Function to handle tracking resume download
+  const trackResumeDownload = () => {
+    if (typeof gtag === "function") {
+      gtag("event", "resume_download", {
+        event_category: "engagement",
+        event_label: "Download CV",
+      });
+    }
+  };
 
   return (
     <div>
@@ -25,6 +36,7 @@ function ResumeNew() {
             href={pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}
+            onClick={trackResumeDownload} // Add tracking here
           >
             <AiOutlineDownload />
             &nbsp;Download CV
@@ -43,6 +55,7 @@ function ResumeNew() {
             href={pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}
+            onClick={trackResumeDownload} // Add tracking here
           >
             <AiOutlineDownload />
             &nbsp;Download CV

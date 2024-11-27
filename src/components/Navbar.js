@@ -13,7 +13,6 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
@@ -27,6 +26,16 @@ function NavBar() {
       updateNavbar(false);
     }
   }
+
+  // Track navigation link clicks
+  const trackNavClick = (linkName) => {
+    if (typeof gtag === "function") {
+      gtag("event", "navbar_click", {
+        event_category: "navigation",
+        event_label: linkName,
+      });
+    }
+  };
 
   window.addEventListener("scroll", scrollHandler);
 
@@ -53,64 +62,86 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
+            {/* Home Link */}
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => {
+                  updateExpanded(false);
+                  trackNavClick("Home");
+                }}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
+            {/* About Link */}
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={() => updateExpanded(false)}
+                onClick={() => {
+                  updateExpanded(false);
+                  trackNavClick("About");
+                }}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
+            {/* Projects Link */}
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/project"
-                onClick={() => updateExpanded(false)}
+                onClick={() => {
+                  updateExpanded(false);
+                  trackNavClick("Projects");
+                }}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
 
+            {/* Resume Link */}
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/resume"
-                onClick={() => updateExpanded(false)}
+                onClick={() => {
+                  updateExpanded(false);
+                  trackNavClick("Resume");
+                }}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item> */}
-
+            {/* GitHub Button */}
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/sammittal1608/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
+                onClick={() => trackNavClick("GitHub")}
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
                 <AiFillStar style={{ fontSize: "1.1em" }} />
               </Button>
+            </Nav.Item>
+
+            {/* LinkedIn Link */}
+            <Nav.Item>
+              <Nav.Link
+                href="https://linkedin.com/in/saiyam-mittal"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackNavClick("LinkedIn")}
+              >
+                <ImBlog style={{ marginBottom: "2px" }} /> LinkedIn
+              </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

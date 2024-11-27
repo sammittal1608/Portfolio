@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
@@ -6,6 +6,36 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
+  // Track when the Home section loads
+  useEffect(() => {
+    if (typeof gtag === "function") {
+      gtag("event", "home_visit", {
+        event_category: "navigation",
+        event_label: "Home Section",
+      });
+    }
+  }, []);
+
+  // Track interactions with the greeting text
+  const trackGreetingClick = () => {
+    if (typeof gtag === "function") {
+      gtag("event", "greeting_click", {
+        event_category: "interaction",
+        event_label: "Hi There Greeting",
+      });
+    }
+  };
+
+  // Track interactions with the home image
+  const trackImageClick = () => {
+    if (typeof gtag === "function") {
+      gtag("event", "home_image_click", {
+        event_category: "interaction",
+        event_label: "Home Image",
+      });
+    }
+  };
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -13,7 +43,11 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <h1
+                style={{ paddingBottom: 15 }}
+                className="heading"
+                onClick={trackGreetingClick} // Track greeting click
+              >
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
@@ -36,6 +70,7 @@ function Home() {
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
+                onClick={trackImageClick} // Track image click
               />
             </Col>
           </Row>

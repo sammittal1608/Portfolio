@@ -1,13 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
-import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
+import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 
 function About() {
+  // Function to track About Section interactions
+  const trackAboutClick = () => {
+    if (typeof gtag === "function") {
+      gtag("event", "about_section_click", {
+        event_category: "navigation",
+        event_label: "About Section",
+      });
+    }
+  };
+
   return (
     <Container fluid className="about-section">
       <Particle />
@@ -20,6 +29,7 @@ function About() {
               paddingTop: "30px",
               paddingBottom: "50px",
             }}
+            onClick={trackAboutClick} // Add tracking here
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               Know Who <strong className="purple">I'M</strong>
@@ -30,6 +40,7 @@ function About() {
             md={5}
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
+            onClick={trackAboutClick} // Add tracking here
           >
             <img src={laptopImg} alt="about" className="img-fluid" />
           </Col>
@@ -44,8 +55,6 @@ function About() {
           <strong className="purple">Tools</strong> I use
         </h1>
         <Toolstack />
-
-        {/* <Github /> */}
       </Container>
     </Container>
   );

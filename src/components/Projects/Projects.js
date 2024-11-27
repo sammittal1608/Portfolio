@@ -10,6 +10,16 @@ import employee from "../../Assets/Projects/employee-directory.png";
 import CarPool from "../../Assets/Projects/carpool.png";
 
 function Projects() {
+  // Function to track project card clicks
+  const trackProjectClick = (projectName) => {
+    if (typeof gtag === "function") {
+      gtag("event", "project_click", {
+        event_category: "projects",
+        event_label: projectName,
+      });
+    }
+  };
+
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -29,6 +39,7 @@ function Projects() {
               description="Real-Time Cryptocurrency Tracker Built with React.js, CoinGecko API, and Styled Components, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
               ghLink="https://github.com/sammittal1608/Crypto-hunter"
               demoLink="https://crypto-hunter.netlify.app/"
+              onClick={() => trackProjectClick("Crypto Hunter")} // Add tracking here
             />
           </Col>
 
@@ -37,9 +48,9 @@ function Projects() {
               imgPath={CarPool}
               isBlog={false}
               title="Carpool"
-              description="A Ride-Sharing and Commuting Management Platform Built with Angular and .NETA Comprehensive Ride-Sharing and Commuting Management Web Application for Booking and Offering Rides, Built with Angular and .NET ."
+              description="A Ride-Sharing and Commuting Management Platform Built with Angular and .NET. A Comprehensive Ride-Sharing and Commuting Management Web Application for Booking and Offering Rides, Built with Angular and .NET."
               ghLink="https://github.com/sammittal1608/CarPool-Angular"
-              // demoLink="https://blogs.soumya-jit.tech/"
+              onClick={() => trackProjectClick("Carpool")} // Add tracking here
             />
           </Col>
 
@@ -48,9 +59,9 @@ function Projects() {
               imgPath={passport}
               isBlog={false}
               title="Passport Scanner System"
-              description="Real-Time Document Scanning and Verification Interface for Hotels and Hospitality Services, Built with React.js and .NET ."
+              description="Real-Time Document Scanning and Verification Interface for Hotels and Hospitality Services, Built with React.js and .NET."
               ghLink="https://github.com/sammittal1608/passport-scanner-app"
-              // demoLink="https://editor.soumya-jit.tech/"              
+              onClick={() => trackProjectClick("Passport Scanner System")} // Add tracking here
             />
           </Col>
 
@@ -61,7 +72,7 @@ function Projects() {
               title="Training Tracker"
               description="Developed a comprehensive training management system using Blazor (frontend) and .NET Web API (backend) for tracking intern progress, with Identity Server integration for secure authentication and authorization."
               ghLink="https://github.com/sammittal1608/training-app"
-              // demoLink="https://plant49-ai.herokuapp.com/"
+              onClick={() => trackProjectClick("Training Tracker")} // Add tracking here
             />
           </Col>
 
@@ -70,9 +81,9 @@ function Projects() {
               imgPath={employee}
               isBlog={false}
               title="Employee Directory"
-              description="Developed an Angular-based employee directory website with .NET Core Web API backend. Facilitated employee access to details and implemented filtering by department, office, and job tle for enhanced user experience."
+              description="Developed an Angular-based employee directory website with .NET Core Web API backend. Facilitated employee access to details and implemented filtering by department, office, and job title for enhanced user experience."
               ghLink="https://github.com/sammittal1608/Angular_EmployeeDirectory"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              onClick={() => trackProjectClick("Employee Directory")} // Add tracking here
             />
           </Col>
 
@@ -83,7 +94,7 @@ function Projects() {
               title="Swagit"
               description="Developed an online food ordering platform, Swagit, using only HTML and CSS. The platform allows users to explore and order from a variety of restaurants."
               ghLink="https://github.com/sammittal1608/Swiggy-Clone"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              onClick={() => trackProjectClick("Swagit")} // Add tracking here
             />
           </Col>
         </Row>
