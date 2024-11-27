@@ -135,7 +135,7 @@ function NavBar() {
             {/* LinkedIn Link */}
             <Nav.Item>
               <Nav.Link
-                href="https://linkedin.com/in/saiyam-mittal"
+                href="https://www.linkedin.com/in/saiyam-mittal-2757a91a4/"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => trackNavClick("LinkedIn")}
