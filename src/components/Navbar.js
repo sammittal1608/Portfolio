@@ -5,14 +5,14 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/SM.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
+import { FaLinkedinIn } from "react-icons/fa";
 import { gtag } from "../Utility/analytics";
 import {
-  AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineRocket,
+  AiFillGithub,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 
@@ -112,6 +112,20 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+            {/* Services Link */}
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/services"
+                onClick={() => {
+                  updateExpanded(false);
+                  trackNavClick("Services");
+                }}
+              >
+                <AiOutlineRocket style={{ marginBottom: "2px" }} /> Services
+              </Nav.Link>
+            </Nav.Item>
+
             {/* Resume Link */}
             <Nav.Item>
               <Nav.Link
@@ -134,8 +148,7 @@ function NavBar() {
                 className="fork-btn-inner"
                 onClick={() => trackNavClick("GitHub")}
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <AiFillGithub style={{ fontSize: "1.2em" }} /> GitHub
               </Button>
             </Nav.Item>
 
@@ -147,7 +160,7 @@ function NavBar() {
                 rel="noreferrer"
                 onClick={() => trackNavClick("LinkedIn")}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> LinkedIn
+                <FaLinkedinIn style={{ marginBottom: "2px" }} /> LinkedIn
               </Nav.Link>
             </Nav.Item>
           </Nav>
