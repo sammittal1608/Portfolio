@@ -6,7 +6,6 @@ import logo from "../Assets/SM.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
-import { gtag } from "../Utility/analytics";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
@@ -26,16 +25,6 @@ function NavBar() {
       updateNavbar(true);
     } else {
       updateNavbar(false);
-    }
-  };
-
-  // Track navigation clicks using gtag
-  const trackNavClick = (linkName) => {
-    if (typeof gtag === "function") {
-      gtag("event", "navbar_click", {
-        event_category: "navigation",
-        event_label: linkName,
-      });
     }
   };
 
@@ -71,14 +60,7 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             {/* Home Link */}
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/"
-                onClick={() => {
-                  updateExpanded(false);
-                  trackNavClick("Home");
-                }}
-              >
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -88,10 +70,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={() => {
-                  updateExpanded(false);
-                  trackNavClick("About");
-                }}
+                onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
@@ -102,10 +81,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/project"
-                onClick={() => {
-                  updateExpanded(false);
-                  trackNavClick("Projects");
-                }}
+                onClick={() => updateExpanded(false)}
               >
                 <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
@@ -117,10 +93,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/services"
-                onClick={() => {
-                  updateExpanded(false);
-                  trackNavClick("Services");
-                }}
+                onClick={() => updateExpanded(false)}
               >
                 <AiOutlineRocket style={{ marginBottom: "2px" }} /> Services
               </Nav.Link>
@@ -131,10 +104,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/resume"
-                onClick={() => {
-                  updateExpanded(false);
-                  trackNavClick("Resume");
-                }}
+                onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
@@ -146,7 +116,6 @@ function NavBar() {
                 href="https://github.com/sammittal1608/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
-                onClick={() => trackNavClick("GitHub")}
               >
                 <AiFillGithub style={{ fontSize: "1.2em" }} /> GitHub
               </Button>
@@ -158,7 +127,6 @@ function NavBar() {
                 href="https://www.linkedin.com/in/saiyam-mittal-2757a91a4/"
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => trackNavClick("LinkedIn")}
               >
                 <FaLinkedinIn style={{ marginBottom: "2px" }} /> LinkedIn
               </Nav.Link>
